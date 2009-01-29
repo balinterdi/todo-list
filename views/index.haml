@@ -1,13 +1,8 @@
 %h3= @flash
 
-- if @todos.size > 0
-  %ul
-    - @todos.each do |todo|
-      %li
-        = todo.summary
-        %a{ :href => "/#{todo.id}/delete" } Delete
-- else
-  %div You don't have anything to do. How come?
-    
+= @header_message
+%ul
+  = partial :todo, :collection => @todos
+            
 %div
   %a{ :href => '/new' } New todo
