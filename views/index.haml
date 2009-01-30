@@ -1,3 +1,14 @@
+/%script{ :type => 'text/javascript', :src => '/javascripts/ajax.js' }
+:javascript
+  $(document).ready(function() {
+    $("a.delete").click(function() {
+      $.post("/" + this.id, function(data) {
+        var link = document.getElementById(data);
+        $(link).parent().hide();
+      });
+    });    
+  })
+  
 %h3= @flash
 
 = @header_message

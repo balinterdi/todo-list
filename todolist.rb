@@ -70,8 +70,14 @@ get %r{/([\d]+)/delete} do
   redirect '/'
 end
 
-delete %r{/(.+)} do
-  puts "XXX the id I was given: #{params[:captures].first}"
+# delete todo
+post %r{/([\d]+)} do
+  # we suppose a numeric id.
+  id = params[:captures].first
+  Todo.get(id).destroy
+  # The return value of this method
+  # will be returned to a caller  
+  id
 end
 
   
