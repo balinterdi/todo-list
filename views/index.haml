@@ -3,8 +3,7 @@
   $(document).ready(function() {
     $("a.delete").click(function() {
       $.post("/" + this.id, function(data) {
-        var link = document.getElementById(data);
-        $(link).parent().hide();
+        $("#"+data).parent().hide();
       });
     });    
   })
