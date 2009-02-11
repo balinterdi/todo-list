@@ -1,0 +1,25 @@
+
+== Requirements
+
+gem install sinatra
+gem install datamapper
+gem install sqlite3-ruby
+(ubuntu:$ apt-get install libsqlite3-dev libsqlite3-ruby)
+gem install do_sqlite3
+
+== setup
+
+ * To make your sqlite database:
+
+mkdir db
+sqlite3 db/development.sqlite3
+
+ * todolist.rb => edit configure, to do automigrate at first time
+
+== run
+
+ruby todolist.rb
+
+== enjoy
+
+http://localhost:4567
