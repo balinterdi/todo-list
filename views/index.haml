@@ -1,10 +1,9 @@
-/%script{ :type => 'text/javascript', :src => '/javascripts/ajax.js' }
 :javascript
   $(document).ready(function() {
     $("a.delete").click(function() {
-      $.post("/" + this.id, function(data) {
+      $.delete_("/" + this.id, {}, function(data){
         $("#"+data).parent().hide();
-      });
+      })
     });    
   })
   

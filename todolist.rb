@@ -52,7 +52,7 @@ get '/new' do
   haml :new
 end
 
-get '/create' do
+post '/create' do
   @todo = Todo.new(:summary => params[:summary])
   if @todo.save
     session['flash'] = 'todo created.'
@@ -63,15 +63,8 @@ get '/create' do
   end
 end
 
-get %r{/([\d]+)/delete} do
-  id = params[:captures].first
-  Todo.get(id).destroy
-  session['flash'] = 'todo deleted.'
-  redirect '/'
-end
-
 # delete todo
-post %r{/([\d]+)} do
+delete %r{/([\d]+)} do
   # we suppose a numeric id.
   id = params[:captures].first
   Todo.get(id).destroy

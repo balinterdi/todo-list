@@ -1,4 +1,4 @@
-%form{ :name => "new_summary", :action => "/create" }
+%form{ :name => "new_summary", :method => "post", :action => "/create" }
   %div
     %label{ :for => "todo_summary" } Summary
     %input{ :type => "text", :name => "summary", :id => "todo_summary" }
