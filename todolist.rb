@@ -7,8 +7,9 @@ configure :development do
   set :mode, 'development'
   enable :sessions
   DataMapper.setup(:default, :adapter => 'sqlite3', :database => 'db/development.sqlite3')  
-  # DataMapper.auto_migrate!
-  # puts "Automigrated!"
+  # uncomment it for the first time!
+  #DataMapper.auto_migrate!
+  #puts "Automigrated!"
 end
 
 # taken from Rails source
